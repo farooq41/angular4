@@ -1,0 +1,10 @@
+<div>
+  <h4>Details of recipe</h4>
+  <hr>
+
+  <div *ngFor="let ingredient of ingredients; let i of index">
+    <div>
+      {{ingredient.name}}({{ingredient.quantity}})
+    </div>
+  </div>
+</div>>

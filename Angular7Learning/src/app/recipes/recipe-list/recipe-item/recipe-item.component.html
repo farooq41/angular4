@@ -1,0 +1,16 @@
+<div>
+  <h4>Recipe Details</h4>
+  <hr>
+
+  <div>
+    {{item.name}}
+  </div>
+  <div>
+      {{item.description}}
+      <img src="{{item.imagePath}}" alt="Some Image"/>
+  </div>
+  <button (click)="toggle=!toggle">Click here for Details</button>
+</div>
+<div [ingredients]="item.ingredients" *ngIf="toggle">
+    <app-recipe-detail></app-recipe-detail>
+</div>
