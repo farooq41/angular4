@@ -1,16 +1,21 @@
-<div>
   <h4>Recipe Details</h4>
   <hr>
-
-  <div>
-    {{item.name}}
+  <div class="col-md-6 float-left">
+    <div class="">
+      <div>
+        {{item.name}}
+      </div>
+      <div>
+        {{item.description}}
+        <img src="{{item.imagePath}}" alt="Some Image" />
+      </div>
+    </div>
   </div>
-  <div>
-      {{item.description}}
-      <img src="{{item.imagePath}}" alt="Some Image"/>
+  <div class="col-md-6 float-right">
+    <div class="">
+      <button (click)="toggle=!toggle">Click here for Details</button>
+      <div *ngIf="toggle">
+        <app-recipe-detail [ingredients]="item.ingredients"></app-recipe-detail>
+      </div>
+    </div>
   </div>
-  <button (click)="toggle=!toggle">Click here for Details</button>
-</div>
-<div [ingredients]="item.ingredients" *ngIf="toggle">
-    <app-recipe-detail></app-recipe-detail>
-</div>
